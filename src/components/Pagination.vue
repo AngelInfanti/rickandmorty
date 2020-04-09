@@ -1,0 +1,46 @@
+<template>
+  <div class="container">
+    <div class="col-md-12">
+      <div class="overflow-auto">
+        <div class="mt-3">
+          <h2 class="mb-3">Pagina: {{ currentPage }}</h2>
+          <b-pagination
+            align="center"
+            v-model="currentPage"
+            :total-rows="rows"
+            :per-page="perPage"
+            first-number
+            last-number
+          ></b-pagination>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "Pagination",
+  data() {
+    return {
+      rows: 25,
+      perPage: 1,
+      currentPage: 1,
+    };
+  },
+  methods: {
+    handlePage(page) {
+      this.$emit("click", page);
+    },
+  },
+  watch: {
+    currentPage: {
+      handler: function(val) {
+        this.$emit("click", val);
+      },
+    },
+  },
+};
+</script>
+
+<style></style>
