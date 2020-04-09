@@ -1,10 +1,13 @@
 <template>
   <div class="container">
+    <div class="col-md-12">
+      <h1 class="font-rickmorty tittle mb-1">Rick AND Morty</h1>
+    </div>
     <transition name="slide-fade">
       <Loader v-if="$apollo.loading"></Loader>
     </transition>
     <transition name="fade">
-      <Characters :characters="characters"></Characters>
+      <Characters :characters="characters" v-if="!$apollo.loading"></Characters>
     </transition>
   </div>
 </template>
@@ -22,11 +25,12 @@ export default {
   data: function() {
     return {};
   },
+
   apollo: {
     // Simple query that will update the 'hello' vue property
     characters: gql`
       query {
-        characters(page: 2, filter: { name: "" }) {
+        characters(page: 3, filter: { name: "" }) {
           info {
             count
           }

@@ -1,6 +1,5 @@
 <template>
   <div id="app" class="app">
-    <h1 class="font-rickmorty tittle mb-5">Angel Infanti</h1>
     <!-- <div id="nav">
       <router-link to="/"><h1 class="font-rickmorty">Graphql</h1></router-link>
       |

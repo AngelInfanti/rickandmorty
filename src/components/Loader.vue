@@ -13,7 +13,9 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-
+img
+  width : 80%
+  height : 80%
 .overlay
       background: rgba(0,0,0,.5);
       position: fixed;
@@ -27,6 +29,7 @@ export default {
       transition: 1.1s ease-in;
       opacity: 0;
       visibility: hidden;
+      width :100%
 
 .overlay.active
     opacity: 1;
@@ -38,20 +41,21 @@ export default {
     animation-duration: 2s;
     animation-iteration-count: infinite;
 
+
 @keyframes platzi-base
     0%
         opacity: 0;
-        transform: scale(.3) rotate(0deg);
+        transform: scale(.3) rotate(405deg);
 
     25%
         opacity: 1;
-        transform: scale(.8) rotate(405deg)
+        transform: scale(.8) rotate(0deg)
 
     75%
         opacity: 1;
-        transform: scale(.8) rotate(405deg);
+        transform: scale(.8) rotate(0deg);
 
     100%
         opacity: 0;
-        transform: scale(.3) rotate(0deg);
+        transform: scale(.3) rotate(405deg);
 </style>

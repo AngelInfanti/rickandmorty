@@ -17,8 +17,10 @@
     "bootstrap": "^4.4.1",
     "bootstrap-vue": "^2.11.0",
     "core-js": "^3.6.4",
+    "swiper": "^5.3.6",
     "vue": "^2.6.11",
     "vue-apollo": "^3.0.0-beta.11",
+    "vue-awesome-swiper": "^4.1.0",
     "vue-router": "^3.1.6",
     "vuex": "^3.1.3"
   },
