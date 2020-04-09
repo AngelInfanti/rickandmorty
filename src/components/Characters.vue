@@ -1,13 +1,12 @@
 <template>
   <div>
-    <h1 class="font-rickmorty tittle">Resultado</h1>
     <div class="row">
       <div
         class="col-lg-4 col-md-6"
         v-for="result in characters.results"
         v-bind:key="result.id"
       >
-        <div class="col-md-12">
+        <div class="character col-md-12">
           <img :src="result.image" />
         </div>
         <div class="col-md-12">
@@ -36,6 +35,8 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.tittle
-    color: #03adc7;
+.character
+  cursor: pointer
+.character:hover
+  transform: scale(1.2);
 </style>

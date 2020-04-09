@@ -26,7 +26,7 @@ export default {
     // Simple query that will update the 'hello' vue property
     characters: gql`
       query {
-        characters(page: 1, filter: { name: "" }) {
+        characters(page: 2, filter: { name: "" }) {
           info {
             count
           }
@@ -52,6 +52,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+
 .fade-enter-active, .fade-leave-active
   transition: opacity 1s;
   transition-delay  1s;
@@ -68,9 +69,7 @@ export default {
 .slide-fade-leave-active {
   transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
 }
-.slide-fade-enter, .slide-fade-leave-to
-/* .slide-fade-leave-active below version 2.1.8 */ {
-  transform: translateX(10px);
+.slide-fade-enter, .slide-fade-leave-to{
   opacity: 0;
 }
 </style>
