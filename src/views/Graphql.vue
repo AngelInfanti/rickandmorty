@@ -30,7 +30,7 @@ export default {
     // Simple query that will update the 'hello' vue property
     characters: gql`
       query {
-        characters(page: 3, filter: { name: "" }) {
+        characters(page: 5, filter: { name: "" }) {
           info {
             count
           }

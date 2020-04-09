@@ -88,7 +88,7 @@ export default {
       height: 300px;
       text-align: center;
       font-weight: bold;
-      font-size: calc($font-size-huge * 2);
+      font-size: 24px;
       background-color: #2C8DFB;
       background-position: center;
       background-size: cover;
