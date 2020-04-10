@@ -15,12 +15,17 @@
       </div>
     </div>
 
-    <swiper class="swiper" :options="swiperOption">
+    <swiper class="swiper" :options="swiperOption" v-if="filters.length > 0">
       <swiper-slide v-for="result in filters" v-bind:key="result.id"
         ><img :src="result.image"
       /></swiper-slide>
       <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
+    <div v-else class="font-rickmorty mt-5 not-found">
+      <h2>
+        No features found
+      </h2>
+    </div>
   </div>
 </template>
 
@@ -110,9 +115,15 @@ export default {
     }
   }
 
+  .not-found
+    font-size: 80px;
+    -webkit-text-fill-color: #16ACC9; /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 1px;
+    text-shadow: 3px 3px 3px #C9D149;
 
-.character
-  cursor: pointer
-.character:hover
-  transform: scale(1.2);
+
+  .character
+    cursor: pointer
+  .character:hover
+    transform: scale(1.2);
 </style>

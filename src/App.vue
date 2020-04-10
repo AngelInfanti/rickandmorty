@@ -14,7 +14,6 @@
 
 <style lang="stylus">
 .tittle
-    color: black;
     font-size: 80px;
     -webkit-text-fill-color: #16ACC9; /* Will override color (regardless of order) */
     -webkit-text-stroke-width: 1px;
