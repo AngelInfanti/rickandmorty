@@ -3,7 +3,6 @@
     <div class="col-md-12">
       <div class="overflow-auto">
         <div class="mt-3">
-          <h2 class="mb-3 font-rickmorty">Pagina: {{ currentPage }}</h2>
           <b-pagination
             align="center"
             v-model="currentPage"
@@ -11,6 +10,7 @@
             :per-page="perPage"
             first-number
             last-number
+            pills
           ></b-pagination>
         </div>
       </div>

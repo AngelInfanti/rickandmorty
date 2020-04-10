@@ -3,11 +3,29 @@
     <div class="col-md-12">
       <h1 class="font-rickmorty tittle mb-1">Rick AND Morty</h1>
     </div>
+    <div class="row d-flex justify-content-center mt-4">
+      <div class="col-md-6">
+        <div class="form-group">
+          <input
+            autocomplete="off"
+            class="form-control text-center"
+            type="text"
+            v-model="search"
+            placeholder="Search Caracter for name"
+            id="search"
+          />
+        </div>
+      </div>
+    </div>
     <transition name="slide-fade">
       <Loader v-if="$apollo.loading"></Loader>
     </transition>
     <transition name="fade">
-      <Characters :characters="characters" v-if="!$apollo.loading"></Characters>
+      <Characters
+        :characters="filters"
+        :search="search"
+        v-if="!$apollo.loading"
+      ></Characters>
     </transition>
     <transition name="fade">
       <Pagination v-show="!$apollo.loading" @click="handlePage"></Pagination>
@@ -29,7 +47,8 @@ export default {
   },
   data: function() {
     return {
-      page: 1
+      page: 1,
+      search: ""
     };
   },
 
@@ -59,6 +78,13 @@ export default {
           page: this.page
         };
       }
+    }
+  },
+  computed: {
+    filters() {
+      let filter = new RegExp(this.search, "i");
+      let result = this.characters.results.filter(el => el.name.match(filter));
+      return result;
     }
   },
   methods: {
