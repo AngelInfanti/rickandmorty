@@ -25,11 +25,11 @@ export default {
   components: {
     Loader,
     Characters,
-    Pagination,
+    Pagination
   },
   data: function() {
     return {
-      page: 1,
+      page: 1
     };
   },
 
@@ -46,12 +46,6 @@ export default {
               id
               name
               image
-              origin {
-                id
-                name
-                type
-                dimension
-              }
             }
           }
           character(id: 1) {
@@ -62,16 +56,16 @@ export default {
       // Reactive variables
       variables() {
         return {
-          page: this.page,
+          page: this.page
         };
-      },
-    },
+      }
+    }
   },
   methods: {
     handlePage(page) {
       this.page = page;
-    },
-  },
+    }
+  }
 };
 </script>
 
