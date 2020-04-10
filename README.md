@@ -1,4 +1,4 @@
-# rickandmorty
+# Rick And Morty Caracters Search
 
 ## Project setup
 ```
