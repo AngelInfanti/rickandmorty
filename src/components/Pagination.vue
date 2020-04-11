@@ -6,7 +6,7 @@
           <b-pagination
             align="center"
             v-model="currentPage"
-            :total-rows="rows"
+            :total-rows="page"
             :per-page="perPage"
             first-number
             last-number
@@ -21,9 +21,14 @@
 <script>
 export default {
   name: "Pagination",
+  props: {
+    page: {
+      type: Number,
+      required: true
+    }
+  },
   data() {
     return {
-      rows: 25,
       perPage: 1,
       currentPage: 1
     };
@@ -42,5 +47,3 @@ export default {
   }
 };
 </script>
-
-<style></style>

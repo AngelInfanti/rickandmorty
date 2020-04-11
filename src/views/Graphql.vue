@@ -28,7 +28,11 @@
       ></Characters>
     </transition>
     <transition name="fade">
-      <Pagination v-show="!$apollo.loading" @click="handlePage"></Pagination>
+      <Pagination
+        v-show="!$apollo.loading"
+        @click="handlePage"
+        :page="characters.info.pages"
+      ></Pagination>
     </transition>
   </div>
 </template>
@@ -60,15 +64,13 @@ export default {
           characters(page: $page, filter: { name: "" }) {
             info {
               count
+              pages
             }
             results {
               id
               name
               image
             }
-          }
-          character(id: 1) {
-            id
           }
         }
       `,
